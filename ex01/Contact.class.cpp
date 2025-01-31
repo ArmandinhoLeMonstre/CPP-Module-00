@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/01/30 21:53:51 by armitite         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:06:20 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,36 @@ Contact::~Contact(void) {
 	return ;
 }
 
-void	Contact::add_first_name(std::string str) {
+void	Contact::create_contact(void) {
 
+	std::string str;
+
+	std::cout << "Add First name :";
+	std::cin >> str;
 	this->first_name = str;
+	std::cout << "Add Last name :";
+	std::cin >> str;
+	this->last_name = str;
+	std::cout << "Add Nickname :";
+	std::cin >> str;
+	this->nickname = str;
+	std::cout << "Add Phone number :";
+	std::cin >> str;
+	this->phone_number = str;
+	std::cout << "Add darkest secret :";
+	std::cin >> str;
+	this->darkest_secret = str;
 	
 	return ;
 }
 
-void	Contact::get_first_name(void) {
+void	Contact::get_contact(void) {
 
 	std::cout << this->first_name << std::endl;
+	std::cout << this->last_name << std::endl;
+	std::cout << this->nickname << std::endl;
+	std::cout << this->phone_number << std::endl;
+	std::cout << this->darkest_secret << std::endl;
 	
 	return ;
 }
-
-// void	Contact::add_last_name(char *str) {
-
-// 	this->last_name = str;
-	
-// 	return ;
-// }

@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:10:24 by armitite          #+#    #+#             */
-/*   Updated: 2025/01/30 21:53:13 by armitite         ###   ########.fr       */
+/*   Updated: 2025/01/31 15:09:48 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ public:
 	Contact(void);
 	~Contact(void);
 
-	std::string first_name;
-	
-	void	add_first_name(std::string str);
-	void	get_first_name(void);
+	void	create_contact(void);
+	void	get_contact(void);
 
 private:
 
-	char	*_darkest_secret;
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string darkest_secret;
 };
 
 #endif
