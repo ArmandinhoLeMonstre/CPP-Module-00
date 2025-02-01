@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:34:48 by armitite          #+#    #+#             */
-/*   Updated: 2025/01/31 16:37:23 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 16:01:55 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,13 @@ int	main(void)
 	PhoneBook instance;
 	instance.contact_nbr = -1;
 	
+	std::cout << "You created a new Phone Book !" << std::endl;
+	std::cout << "Use 'ADD' to add a new contact" << std::endl;
+	std::cout << "Use 'SEARCH' to search a contact" << std::endl;
+	std::cout << "Use 'EXIT' to exit the Phone Book" << std::endl;
 	while (1)
 	{
-		std::cin >> str;
+		std::getline (std::cin, str);
 		if (std::cin.eof())
 			break ;
 		if (str == "EXIT")
@@ -31,12 +35,15 @@ int	main(void)
 		if (str == "ADD")
 		{
 			instance.add_contact();
+			std::cin.ignore();
 		}
-		if (str == "GET")
+		if (str == "SEARCH")
 		{
+			instance.display_contacts();
 			instance.get_contact();
 		}
-		//std::cout << "Word :" << str << std::endl;
+		else
+			std::cout << "Bad input, try to use 'ADD', 'SEARCH' or 'EXIT'" << std::endl;
 	}
 	return (0);
 }

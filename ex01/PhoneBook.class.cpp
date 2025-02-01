@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 18:59:17 by armitite          #+#    #+#             */
-/*   Updated: 2025/01/31 16:58:47 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 15:51:11 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,10 @@
 
 PhoneBook::PhoneBook(void) {
 
-	std::cout << "PhoneBook Constructor called" << std::endl;
-
 	return ;
 }
 
 PhoneBook::~PhoneBook(void) {
-
-	std::cout << "PhoneBook Destructor called" << std::endl;
 
 	return ;
 }
@@ -46,6 +42,20 @@ void	PhoneBook::add_contact(void) {
 	return ;
 }
 
+void	PhoneBook::display_contacts(void) {
+
+	int	i = 1;
+	
+	std::cout << "Index / First name / Last name / Nickname" << std::endl;
+	while (i <= 8)
+	{
+		std::cout << i << " | ";
+		contact[i - 1].display_tab();
+		std::cout << std::endl;
+		i++;
+	}
+}
+
 void	PhoneBook::get_contact(void) {
 
 	std::string input;
@@ -56,15 +66,13 @@ void	PhoneBook::get_contact(void) {
 	input_int = -1;
 	while (checker != 1)
 	{
-		std::cout << "Contact number: ";
+		std::cout << "Contact index: ";
 		std::cin >> input;
 		const char *input_str = input.c_str();
-		long unsigned int i;
-		printf("%s\n", input_str);
-		i = 0;
+		long unsigned int i = 0;
 		while (i < std::strlen(input_str))
 		{
-			if (isdigit(input_str[i]) != 0)
+			if (isdigit(input_str[i]) == 0)
 			{
 				std::cout << "Non numeric" << std::endl;
 				break ;
@@ -77,13 +85,13 @@ void	PhoneBook::get_contact(void) {
 			ss >> input_int;
 			if (std::cin.eof())
 				return ;
-			if (!(input_int >= 0 && input_int <= 7))
-				std::cout << "Contact index need to be between 0 & 7" << std::endl;
+			if (!(input_int >= 1 && input_int <= 8))
+				std::cout << "Contact index need to be between 1 & 8" << std::endl;
 			else
 				checker = 1;
 		}
 	}
-	contact[input_int].get_contact();
+	contact[input_int - 1].get_contact();
 	
 	return ;
 }
