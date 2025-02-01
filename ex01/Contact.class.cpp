@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alo.cpp                                            :+:      :+:    :+:   */
+/*   Contact.class.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/01 17:13:03 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:48:37 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ void	Contact::display_tab(void) {
 	{
 		const char *str_tmp = first_name.c_str();
 		if (std::strlen(str_tmp) <= 10)
-			std::cout << first_name << " | ";
+		{
+			std::cout << first_name;
+			for (long unsigned int i = 0; i < (12 - std::strlen(str_tmp)); i++)
+				std::cout << " ";
+			std::cout << "| ";
+		}
 		else
 		{
 			std::string tmp_for_cout = first_name.substr (0,11);
@@ -42,7 +47,12 @@ void	Contact::display_tab(void) {
 		}
 		str_tmp = last_name.c_str();
 		if (std::strlen(str_tmp) <= 10)
-			std::cout << last_name << " | ";
+		{
+			std::cout << last_name;
+			for (long unsigned int i = 0; i < (12 - std::strlen(str_tmp)); i++)
+				std::cout << " ";
+			std::cout << "| ";
+		}
 		else
 		{
 			std::string tmp_for_cout = last_name.substr (0,11);
@@ -51,7 +61,12 @@ void	Contact::display_tab(void) {
 		}
 		str_tmp = nickname.c_str();
 		if (std::strlen(str_tmp) <= 10)
-			std::cout << nickname << " | ";
+		{
+			std::cout << nickname;
+			for (long unsigned int i = 0; i < (12 - std::strlen(str_tmp)); i++)
+				std::cout << " ";
+			std::cout << "| ";
+		}
 		else
 		{
 			std::string tmp_for_cout = nickname.substr (0,11);
@@ -86,8 +101,25 @@ void	Contact::create_contact(void) {
 	}
 	while ((phone_number.empty()))
 	{
-		std::cout << "Phone number :";
-		std::getline (std::cin, str);
+		while (1)
+		{
+			std::cout << "Phone number :";
+			std::getline (std::cin, str);
+			const char *input_str = str.c_str();
+			int x = 0;
+			for (long unsigned int i = 0; i < std::strlen(input_str); i++)
+			{
+				if (isdigit(input_str[i]) == 0)
+				{
+					std::cout << "Non numeric" << std::endl;
+					x = 1;
+					break ;
+				}
+				i++;
+			}
+			if (x == 0)
+				break ;
+		}
 		this->phone_number = str;
 	}
 	while ((darkest_secret.empty()))

@@ -1,12 +1,10 @@
 NAME = megaphone
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3
 
 RM = rm -rf
 
 OBJ = megaphone.cpp
-
-# HEAD = ./include/
 
 all : $(NAME)
 
@@ -16,9 +14,9 @@ $(NAME) : $(OBJ)
 	@echo "\033[1;32m./megaphone created\n"
 
 clean :
-	$(RM) $(OBJ)
+	$(RM) megaphone
 
 fclean : clean
-	$(RM) $(NAME)
+	$(RM) megaphone
 
 re : fclean all

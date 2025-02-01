@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ph.cpp                                             :+:      :+:    :+:   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 18:59:17 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/01 17:13:47 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:49:13 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	PhoneBook::display_contacts(void) {
 
 	int	i = 1;
 	
-	std::cout << "Index / First name / Last name / Nickname" << std::endl;
+	std::cout << "In | First name  | Last name   | Nickname    |" << std::endl;
 	while (i <= 8)
 	{
-		std::cout << i << " | ";
+		std::cout << i << "  | ";
 		contact[i - 1].display_tab();
 		std::cout << std::endl;
 		i++;
