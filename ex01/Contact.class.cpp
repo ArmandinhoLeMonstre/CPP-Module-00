@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.class.cpp                                  :+:      :+:    :+:   */
+/*   alo.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/01 15:58:26 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:13:03 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	Contact::create_contact(void) {
 	std::string str;
 
 	std::cout << "Fill the contact informations :" << std::endl;
-	std::cin.ignore();
 	while ((first_name.empty())) 
 	{
 		std::cout << "First name :";

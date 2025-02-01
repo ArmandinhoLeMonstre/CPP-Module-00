@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   ph.cpp                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 18:59:17 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/01 15:51:11 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:13:47 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	PhoneBook::get_contact(void) {
 	while (checker != 1)
 	{
 		std::cout << "Contact index: ";
-		std::cin >> input;
+		std::getline (std::cin, input);
 		const char *input_str = input.c_str();
 		long unsigned int i = 0;
 		while (i < std::strlen(input_str))

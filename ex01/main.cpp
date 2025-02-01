@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   mainn.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:34:48 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/01 16:01:55 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 17:13:27 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,16 @@ int	main(void)
 		std::getline (std::cin, str);
 		if (std::cin.eof())
 			break ;
-		if (str == "EXIT")
+		else if (str == "EXIT")
+		{
+			std::cout << "Closing the PhoneBook..." << std::endl;
 			break ;
-		if (str == "ADD")
+		}
+		else if (str == "ADD")
 		{
 			instance.add_contact();
-			std::cin.ignore();
 		}
-		if (str == "SEARCH")
+		else if (str == "SEARCH")
 		{
 			instance.display_contacts();
 			instance.get_contact();
