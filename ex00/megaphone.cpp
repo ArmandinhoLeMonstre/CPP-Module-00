@@ -6,26 +6,11 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 16:47:56 by armitite          #+#    #+#             */
-/*   Updated: 2025/01/30 17:27:39 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:20:27 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-int	ft_islower(int c)
-{
-	if ((c <= 'z' && c >= 'a'))
-		return (1);
-	else
-		return (0);
-}
-
-int	ft_toupper(int c)
-{
-	if (c >= 97 && c <= 122)
-		c = c - 32;
-	return (c);
-}
 
 int	main(int ac, char **av)
 {
@@ -44,8 +29,8 @@ int	main(int ac, char **av)
 		i = 0;
 		while (av[x][i])
 		{
-			if (ft_islower(av[x][i]))
-				av[x][i] = ft_toupper(av[x][i]);
+			if (std::islower(av[x][i]))
+           		av[x][i] = std::toupper(av[x][i]); 
 			i++;
 		}
 		std::cout << av[x];
