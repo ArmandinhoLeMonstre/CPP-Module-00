@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/04 09:41:27 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/04 09:51:01 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	Contact::display_tab(void) {
 		if (std::strlen(str_tmp) <= 10)
 		{
 			std::cout << std::setw(11) << std::right << first_name << " | ";
-			// std::cout << first_name;
-			// std::cout << " | ";
 		}
 		else
 		{
@@ -49,8 +47,6 @@ void	Contact::display_tab(void) {
 		if (std::strlen(str_tmp) <= 10)
 		{
 			std::cout << std::setw(11) << std::right << last_name << " | ";
-			// std::cout << last_name;
-			// std::cout << " | ";
 		}
 		else
 		{
@@ -62,8 +58,6 @@ void	Contact::display_tab(void) {
 		if (std::strlen(str_tmp) <= 10)
 		{
 			std::cout <<std::setw(11) << std::right << nickname << " | ";
-			// std::cout << nickname;
-			// std::cout << " | ";
 		}
 		else
 		{
