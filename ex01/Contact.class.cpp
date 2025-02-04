@@ -6,12 +6,13 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/01 17:48:37 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/04 09:20:34 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.class.hpp"
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <istream>
 #include <sstream>
@@ -34,10 +35,9 @@ void	Contact::display_tab(void) {
 		const char *str_tmp = first_name.c_str();
 		if (std::strlen(str_tmp) <= 10)
 		{
+			std::cout << std::setw(14 - std::strlen(str_tmp));
 			std::cout << first_name;
-			for (long unsigned int i = 0; i < (12 - std::strlen(str_tmp)); i++)
-				std::cout << " ";
-			std::cout << "| ";
+			std::cout << " | ";
 		}
 		else
 		{
@@ -48,10 +48,9 @@ void	Contact::display_tab(void) {
 		str_tmp = last_name.c_str();
 		if (std::strlen(str_tmp) <= 10)
 		{
+			std::cout << std::setw(14 - std::strlen(str_tmp));
 			std::cout << last_name;
-			for (long unsigned int i = 0; i < (12 - std::strlen(str_tmp)); i++)
-				std::cout << " ";
-			std::cout << "| ";
+			std::cout << " | ";
 		}
 		else
 		{
@@ -62,10 +61,9 @@ void	Contact::display_tab(void) {
 		str_tmp = nickname.c_str();
 		if (std::strlen(str_tmp) <= 10)
 		{
+			std::cout << std::setw(14 - std::strlen(str_tmp));
 			std::cout << nickname;
-			for (long unsigned int i = 0; i < (12 - std::strlen(str_tmp)); i++)
-				std::cout << " ";
-			std::cout << "| ";
+			std::cout << " | ";
 		}
 		else
 		{
