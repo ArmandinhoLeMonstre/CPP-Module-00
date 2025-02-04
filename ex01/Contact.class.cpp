@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/04 09:51:01 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:22:47 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ void	Contact::create_contact(void) {
 					x = 1;
 					break ;
 				}
-				i++;
 			}
 			if (x == 0)
 				break ;
