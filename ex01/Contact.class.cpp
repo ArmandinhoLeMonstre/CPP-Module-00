@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/04 09:20:34 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/04 09:41:27 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	Contact::display_tab(void) {
 		const char *str_tmp = first_name.c_str();
 		if (std::strlen(str_tmp) <= 10)
 		{
-			std::cout << std::setw(14 - std::strlen(str_tmp));
-			std::cout << first_name;
-			std::cout << " | ";
+			std::cout << std::setw(11) << std::right << first_name << " | ";
+			// std::cout << first_name;
+			// std::cout << " | ";
 		}
 		else
 		{
@@ -48,9 +48,9 @@ void	Contact::display_tab(void) {
 		str_tmp = last_name.c_str();
 		if (std::strlen(str_tmp) <= 10)
 		{
-			std::cout << std::setw(14 - std::strlen(str_tmp));
-			std::cout << last_name;
-			std::cout << " | ";
+			std::cout << std::setw(11) << std::right << last_name << " | ";
+			// std::cout << last_name;
+			// std::cout << " | ";
 		}
 		else
 		{
@@ -61,9 +61,9 @@ void	Contact::display_tab(void) {
 		str_tmp = nickname.c_str();
 		if (std::strlen(str_tmp) <= 10)
 		{
-			std::cout << std::setw(14 - std::strlen(str_tmp));
-			std::cout << nickname;
-			std::cout << " | ";
+			std::cout <<std::setw(11) << std::right << nickname << " | ";
+			// std::cout << nickname;
+			// std::cout << " | ";
 		}
 		else
 		{
@@ -133,7 +133,7 @@ void	Contact::create_contact(void) {
 void	Contact::get_contact(void) {
 
 	std::cout << "First name: " << this->first_name << std::endl;
-	std::cout << "Last name:" << this->last_name << std::endl;
+	std::cout << "Last name: " << this->last_name << std::endl;
 	std::cout << "Nickname: " << this->nickname << std::endl;
 	std::cout << "Phone number: " << this->phone_number << std::endl;
 	std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
