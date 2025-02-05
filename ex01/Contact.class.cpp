@@ -6,7 +6,7 @@
 /*   By: armitite <armitite@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 19:28:15 by armitite          #+#    #+#             */
-/*   Updated: 2025/02/04 11:22:47 by armitite         ###   ########.fr       */
+/*   Updated: 2025/02/05 12:25:00 by armitite         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,24 @@ void	Contact::create_contact(void) {
 	{
 		std::cout << "First name :";
 		std::getline (std::cin, str);
+		if (std::cin.eof())
+			return ;
 		this->first_name = str;
 	}
 	while ((last_name.empty())) 
 	{
 		std::cout << "Last name :";
 		std::getline (std::cin, str);
+		if (std::cin.eof())
+			return ;
 		this->last_name = str;
 	}
 	while ((nickname.empty()))
 	{
 		std::cout << "Nickname :";
 		std::getline (std::cin, str);
+		if (std::cin.eof())
+			return ;
 		this->nickname = str;
 	}
 	while ((phone_number.empty()))
@@ -117,14 +123,22 @@ void	Contact::create_contact(void) {
 	{
 		std::cout << "Darkest secret :";
 		std::getline (std::cin, str);
+		if (std::cin.eof())
+			return ;
 		this->darkest_secret = str;
 	}
+	std::cout << "Contact filled !" << std::endl;
 	
 	return ;
 }
 
 void	Contact::get_contact(void) {
 
+	if ((first_name.empty()))
+	{
+		std::cout << "This contact is empty !" << std::endl;
+		return ;
+	}
 	std::cout << "First name: " << this->first_name << std::endl;
 	std::cout << "Last name: " << this->last_name << std::endl;
 	std::cout << "Nickname: " << this->nickname << std::endl;
